@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centigrade to Fahrenheit Converter</title>
+</head>
+<body>
+    <h1>Celsius to Fahrenheit Converter</h1>
+    <form>
+        <label for="celsius">Enter Celsius:</label>
+        <input id="celsius" type="text">
+        <input type="submit" value="Convert">
+    </form>
+    <div style="display: none;"><span id="celsius-output"></span> degrees in centigrade is <span id="fahrenheit"></span> degrees in fahrenheit.</div>
+    <script>
+        let converter = document.querySelector("form");
+        converter.addEventListener("submit", (event) => {
+            event.preventDefault();
+            let degCent = document.getElementById("celsius").value;
+            let degFahr = 9/5 * degCent + 32;
+            document.getElementById("celsius-output").innerHTML = degCent;
+            document.getElementById("fahrenheit").innerHTML = degFahr;
+            document.querySelector("div").style.display = "block";
+        });
+    </script>
+</body>
+</html>
